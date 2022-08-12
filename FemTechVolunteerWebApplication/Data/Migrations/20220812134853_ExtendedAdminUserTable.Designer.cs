@@ -4,6 +4,7 @@ using FemTechVolunteerWebApplication.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FemTechVolunteerWebApplication.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220812134853_ExtendedAdminUserTable")]
+    partial class ExtendedAdminUserTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -94,76 +96,6 @@ namespace FemTechVolunteerWebApplication.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-                });
-
-            modelBuilder.Entity("FemTechVolunteerWebApplication.Data.Volunteer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("AvailabilityTimes")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CentersPreferredToWork")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool?>("IsDriverLicense")
-                        .HasColumnType("bit");
-
-                    b.Property<bool?>("IsSocialSecurity")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("SkillsInterests")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VolunteerAddress")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VolunteerApprovalStatus")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VolunteerCurrentLicenses")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VolunteerEducationalBackground")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VolunteerEmail")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VolunteerEmergencyAddress")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VolunteerEmergencyEmail")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VolunteerEmergencyName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VolunteerEmergencyPhone")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VolunteerFirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VolunteerLastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VolunteerPassword")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VolunteerPhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VolunteerUserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Volunteers");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
