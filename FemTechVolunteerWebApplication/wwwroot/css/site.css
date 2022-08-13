@@ -16,3 +16,9 @@ html {
 body {
   margin-bottom: 60px;
 }
+.carousel-item {
+    background-color: #000;
+}
+.carousel-item img{
+    opacity:0.6;
+}
