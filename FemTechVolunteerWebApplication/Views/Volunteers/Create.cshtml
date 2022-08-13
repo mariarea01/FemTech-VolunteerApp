@@ -1,0 +1,119 @@
+﻿@model FemTechVolunteerWebApplication.Data.Volunteer
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Add a new Volunteer</h1>
+
+<h4>Volunteer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="VolunteerFirstName" class="control-label">First Name</label>
+                <input asp-for="VolunteerFirstName" class="form-control" />
+                <span asp-validation-for="VolunteerFirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VolunteerLastName" class="control-label">Last Name</label>
+                <input asp-for="VolunteerLastName" class="form-control" />
+                <span asp-validation-for="VolunteerLastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VolunteerUserName" class="control-label">Username</label>
+                <input asp-for="VolunteerUserName" class="form-control" />
+                <span asp-validation-for="VolunteerUserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VolunteerPassword" class="control-label">Password</label>
+                <input asp-for="VolunteerPassword" class="form-control" />
+                <span asp-validation-for="VolunteerPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CentersPreferredToWork" class="control-label">Volunteer Opportunity</label>
+                <input asp-for="CentersPreferredToWork" class="form-control" />
+                <span asp-validation-for="CentersPreferredToWork" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SkillsInterests" class="control-label">List any skills or interests</label>
+                <input asp-for="SkillsInterests" class="form-control" />
+                <span asp-validation-for="SkillsInterests" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AvailabilityTimes" class="control-label">When are you available to volunteer?</label>
+                <input asp-for="AvailabilityTimes" class="form-control" />
+                <span asp-validation-for="AvailabilityTimes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VolunteerAddress" class="control-label">Address</label>
+                <input asp-for="VolunteerAddress" class="form-control" />
+                <span asp-validation-for="VolunteerAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VolunteerPhoneNumber" class="control-label">Phone Number</label>
+                <input asp-for="VolunteerPhoneNumber" class="form-control" />
+                <span asp-validation-for="VolunteerPhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VolunteerEmail" class="control-label">Email</label>
+                <input asp-for="VolunteerEmail" class="form-control" />
+                <span asp-validation-for="VolunteerEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VolunteerEducationalBackground" class="control-label">Educational Background</label>
+                <input asp-for="VolunteerEducationalBackground" class="form-control" />
+                <span asp-validation-for="VolunteerEducationalBackground" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VolunteerCurrentLicenses" class="control-label">Do you have any current licenses?</label>
+                <input asp-for="VolunteerCurrentLicenses" class="form-control" />
+                <span asp-validation-for="VolunteerCurrentLicenses" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VolunteerEmergencyName" class="control-label">Emergency Contact Name</label>
+                <input asp-for="VolunteerEmergencyName" class="form-control" />
+                <span asp-validation-for="VolunteerEmergencyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VolunteerEmergencyPhone" class="control-label">Emergency Contact Phone Number</label>
+                <input asp-for="VolunteerEmergencyPhone" class="form-control" />
+                <span asp-validation-for="VolunteerEmergencyPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VolunteerEmergencyEmail" class="control-label">Emergency Contact Email</label>
+                <input asp-for="VolunteerEmergencyEmail" class="form-control" />
+                <span asp-validation-for="VolunteerEmergencyEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VolunteerEmergencyAddress" class="control-label">Emergency Contact Address</label>
+                <input asp-for="VolunteerEmergencyAddress" class="form-control" />
+                <span asp-validation-for="VolunteerEmergencyAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsDriverLicense" class="control-label">Do you have a driver's license? (True or False)</label>
+                <input asp-for="IsDriverLicense" class="form-control" />
+                <span asp-validation-for="IsDriverLicense" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsSocialSecurity" class="control-label">Do you have a social security number? (True or False)</label>
+                <input asp-for="IsSocialSecurity" class="form-control" />
+                <span asp-validation-for="IsSocialSecurity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VolunteerApprovalStatus" class="control-label">Approval Status</label>
+                <input asp-for="VolunteerApprovalStatus" class="form-control" />
+                <span asp-validation-for="VolunteerApprovalStatus" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="submit" value="Add New Volunteer" class="btn btn-primary" />  <a asp-action="Index" class="btn btn-outline-dark">Back to Volunteer List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

@@ -1,6 +1,8 @@
 using FemTechVolunteerWebApplication.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+using FemTechVolunteerWebApplication.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,10 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 ///but I changed it to be <AdminUser> I created for application related uses
 builder.Services.AddDefaultIdentity<AdminUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
+///This is the Mapper for the data and view model for volunteer
+builder.Services.AddAutoMapper(typeof(MapperConfig));
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

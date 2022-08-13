@@ -11,10 +11,14 @@ namespace FemTechVolunteerWebApplication.Data
         public int Id { get; set; }
         public string? VolunteerFirstName { get; set; }
 
+        
         public string? VolunteerLastName { get; set; }
 
+        [Display(Name = "Username")]
         public string? VolunteerUserName { get; set; }
+        [Display(Name = "Password")]
         public string? VolunteerPassword { get; set; }
+
         public string? CentersPreferredToWork { get; set; }
         public string? SkillsInterests { get; set; }
         public string? AvailabilityTimes { get; set; }
