@@ -6,11 +6,23 @@
 
 <h1>Manage Volunteers</h1>
 
+
+<form asp-action="Index" method="get">
+    <div class="form-group float-end">
+        <label for = "SearchString">Search by Volunteer Name</label>
+            <input type="text" name="SearchString" value="" />
+        <input type = "submit" value="Search" class="btn btn-primary"/>
+   </div>
+</form>
+
 <p>
-    <a asp-action="Create">Add a New Volunteer</a>
+    <a href='@Url.Action("Create", "Volunteers")' class="btn btn-primary">Add a New Volunteer</a>
 </p>
-<table class="table">
-    <thead>
+
+<div class="container my-5">
+<div class="shadow-4 rounded-5 overflow-hidden">
+ <table class="table align middle mb-0 bg-white table-hover">
+    <thead class="bg-light">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.VolunteerFirstName)
@@ -42,12 +54,15 @@
             <td>
                 @Html.DisplayFor(modelItem => item.VolunteerApprovalStatus)
             </td>
+
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-dark">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-dark">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-dark">Delete</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+</div>
+</div>

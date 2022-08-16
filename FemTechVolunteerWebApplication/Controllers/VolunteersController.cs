@@ -27,6 +27,8 @@ namespace FemTechVolunteerWebApplication.Controllers
         {
             var Volunteers = mapper.Map<List<VolunteersModel>>(await _context.Volunteers.ToListAsync());
             return View(Volunteers);
+
+
             /*
               return _context.Volunteers != null ? 
                           View(await _context.Volunteers.ToListAsync()) :
